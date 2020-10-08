@@ -13,11 +13,6 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '0.2em',
         direction: 'rtl',
     },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
     title: {
         display: 'flex',
         width: '100%',
@@ -51,6 +46,7 @@ props: {
 }
 */
 
+// Todo: fix the content click hidden bug
 export default function Post(props) {
     const [isHidden, setIsHidden] = useState(props.isOffensive);
     const classes = useStyles();
