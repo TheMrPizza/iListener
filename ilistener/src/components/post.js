@@ -47,6 +47,7 @@ props: {
 }
 */
 
+// Todo: fix the content click hidden bug
 export default function Post(props) {
     const [isHidden, setIsHidden] = useState(props.isOffensive);
     const classes = useStyles();
