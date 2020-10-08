@@ -13,11 +13,6 @@ const useStyles = makeStyles((theme) => ({
         maxWidth: '50%',
         direction: 'rtl',
     },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
     title: {
         display: 'flex',
         width: '100%',
