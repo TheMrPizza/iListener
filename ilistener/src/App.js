@@ -1,14 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
-import HomePage from "./pages/homePage";
-import "./App.css";
-import { getPosts } from "./services/postsService";
+import React from 'react';
+import HomePage from './pages/homePage'
+import './App.css';
+import { ThemeProvider } from '@material-ui/core/styles';
+import { mainTheme } from './styling/themes';
 
 function App() {
   return (
-    <div className="App">
-      <HomePage />
-    </div>
+    <ThemeProvider theme={mainTheme} >
+      <div className="App">
+        <HomePage/>
+      </div>
+    </ThemeProvider>
   );
 }
 

@@ -8,5 +8,12 @@ export const mainTheme = createMuiTheme({
             light: '#229ae9',
             dark: '#1a76e1',
         },
+    },
+    overrides: {
+        MuiButton: {
+            root: {
+                
+            }
+        }
     }
 })

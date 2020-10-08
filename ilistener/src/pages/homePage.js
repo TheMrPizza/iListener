@@ -1,8 +1,8 @@
 import React from 'react';
-import Post from '../components/post';
-// import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
-// import { mainTheme } from '../styling/themes';
+import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import Feed from '../components/feed';
+import '../App.css';
 
 // const useStyles = makeStyles((theme) => ({
 //     root: {
@@ -28,11 +28,11 @@ export default function HomePage(props) {
     // </ThemeProvider>
 
     return (
-        <Post 
-            isOffensive={true}
-            content={tempMessage}
-            title={tempTitle}
-            id={1}
-        />
+        <div className={"home-page"}>
+            <div style={{padding: '2em'}}>
+                Write a post...
+            </div>
+            <Feed posts={[1, 2]}/>
+        </div>
     )
 }
