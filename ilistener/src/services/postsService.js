@@ -20,6 +20,7 @@ const getPosts = async () => {
 
 const createPost = async (title, message) => {
   const res = await fetch(serverUrl, {
+    method: 'POST',
     body: {
       title,
       message,

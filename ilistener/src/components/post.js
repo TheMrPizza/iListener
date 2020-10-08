@@ -61,7 +61,11 @@ export default function Post(props) {
                     {props.title}
                 </div>
             </Typography>
-            <Typography className={classes.content} onClick={() => setIsHidden(false)}>
+            <Typography className={classes.content} onClick={() => {
+                if(isHidden) {
+                    setIsHidden(false);
+                }
+            }}>
                 {props.content}
             </Typography>
         </CardContent>
