@@ -23,8 +23,9 @@ export default function HomePage(props) {
     return (
         <div className={"home-page"} style={{'padding-top': '50px'}}>
             {isOpen && <PostCreation submitPost={submitPost}/>}
-            {!isOpen && <Feed posts={[{content: text, title: title, id:5, containsBadWords: true}]}/>}
+            {isOpen && <Button onClick={() => setIsOpen(false)}>בטל</Button>}
             {!isOpen && <Button onClick={() => {setIsOpen(true)}}>צור פוסט חדש</Button>}
+            {!isOpen && <Feed posts={[{content: text, title: title, id:5, containsBadWords: true}]}/>}
         </div>
     )
 }
