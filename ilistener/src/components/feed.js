@@ -1,11 +1,17 @@
 import React from 'react';
+import Post from './post';
 import '../App.css';
 
 function Feed(props) {
     return (
         <div className={"feed"}>
             {props.posts.map(post => (
-                <div>post</div>
+                <Post 
+                    isOffensive={post.containsBadWords}
+                    content={post.content}
+                    title={post.title}
+                    id={post.id}
+                />
             ))}
         </div>
     );
