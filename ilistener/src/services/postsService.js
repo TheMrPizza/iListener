@@ -1,6 +1,6 @@
 import Post from "../models/post";
 
-const serverUrl = "localhost:5000";
+const serverUrl = "http://localhost:5000";
 
 const getPosts = async () => {
   const res = await fetch(`${serverUrl}/posts`);
@@ -14,6 +14,8 @@ const getPosts = async () => {
 
     return new Post(title, message, id, containsBadWords);
   });
+
+  return posts;
 };
 
 const createPost = async (title, message) => {
@@ -33,3 +35,5 @@ const createPost = async (title, message) => {
 
   return new Post(_title, _message, id, containsBadWords);
 };
+
+export { getPosts, createPost };
