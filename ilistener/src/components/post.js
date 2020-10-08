@@ -10,7 +10,7 @@ import { mainTheme } from '../styling/themes';
 
 const useStyles = makeStyles((theme) => ({
     root:{
-        maxWidth: '50%',
+        marginTop: '0.2em',
         direction: 'rtl',
     },
     title: {
@@ -55,7 +55,7 @@ export default function Post(props) {
 
   return (
     <ThemeProvider theme={mainTheme} >
-        <Card className={classes.root}>
+        <Card square variant="outlined" className={classes.root}>
         <CardContent className={contentClasses}>
             <Typography className={classes.title} gutterBottom>
                 <div className={classes.titleText}>
