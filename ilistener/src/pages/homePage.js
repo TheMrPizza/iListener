@@ -1,6 +1,7 @@
 import React, { useCallback } from 'react';
 import Feed from '../components/feed';
-import {getPosts} from '../services/postsService';
+import PostCreation from '../components/postCreation';
+import {getPosts, createPost} from '../services/postsService';
 import '../App.css';
 
 export default function HomePage(props) {
@@ -12,11 +13,13 @@ export default function HomePage(props) {
         return [{id: 5, title: '343', content: 'jfdf', containsBadWords: false}];
     }
 
+    const submitPost = useCallback(async (title, content) => {
+        await createPost(title, content);
+    })
+
     return (
         <div className={"home-page"}>
-            <div style={{padding: '2em'}}>
-                Write a post...
-            </div>
+            <PostCreation submitPost={submitPost}></PostCreation>
             <Feed posts={loadPosts()}/>
         </div>
     )

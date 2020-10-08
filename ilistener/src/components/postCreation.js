@@ -34,9 +34,17 @@ export default function PostCreation(props) {
     const [content, setContent] = useState();
     const classes = useStyles();
 
-    const submitPost = () => {
-        createPost(titleText, content);
-    };
+    // return (
+    //     <div>
+    //         <TextField 
+    //             value={titleText} 
+    //             onChange={(event) => setTitleText(event.target.value)} 
+    //             defaultValue="כותרת"
+    //             variant="outlined"
+    //             fullWidth
+    //         />
+    //     </div>
+    // );
 
     return (
         <ThemeProvider theme={mainTheme} >
@@ -64,7 +72,7 @@ export default function PostCreation(props) {
             </CardContent>
             <CardActions>
                 {(titleText && content) && (
-                    <Button size="small" onClick={submitPost}>העלה פוסט</Button>
+                    <Button size="small" onClick={() => props.submitPost(titleText, content)}>העלה פוסט</Button>
                 )}
             </CardActions>
             </Card>
