@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         fontSize: 14,
         fontWeight: 'bold',
-        textDecoration: 'underline',
         maxWidth: '50%',
     },
     content: {
