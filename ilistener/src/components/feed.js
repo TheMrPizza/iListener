@@ -3,6 +3,7 @@ import Post from './post';
 import '../App.css';
 
 function Feed(props) {
+    console.log(props);
     return (
         <div className={"feed"}>
             {props.posts.map(post => (
@@ -11,6 +12,7 @@ function Feed(props) {
                     content={post.content}
                     title={post.title}
                     id={post.id}
+                    key={post.id}
                 />
             ))}
         </div>
