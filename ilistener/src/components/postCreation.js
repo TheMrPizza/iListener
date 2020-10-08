@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import TextField from '@material-ui/core/TextField';
 import { mainTheme } from '../styling/themes';
+import { createPost } from '../services/postsService';
 
 const useStyles = makeStyles((theme) => ({
     root:{
@@ -33,6 +34,10 @@ export default function PostCreation(props) {
     const [content, setContent] = useState();
     const classes = useStyles();
 
+    const submitPost = () => {
+        createPost(titleText, content);
+    };
+
     return (
         <ThemeProvider theme={mainTheme} >
             <Card className={classes.root}>
@@ -41,7 +46,7 @@ export default function PostCreation(props) {
                     <TextField 
                         value={titleText} 
                         onChange={(event) => setTitleText(event.target.value)} 
-                        defaultValue="כותרת"
+                        placeholder="כותרת"
                         variant="outlined"
                         fullWidth
                     />
@@ -51,7 +56,7 @@ export default function PostCreation(props) {
                         className={classes.contentText} 
                         value={content} 
                         onChange={(event) => setContent(event.target.value)} 
-                        defaultValue="טקסט" 
+                        placeholder="טקסט" 
                         variant="outlined"
                         fullWidth
                     />
@@ -59,7 +64,7 @@ export default function PostCreation(props) {
             </CardContent>
             <CardActions>
                 {(titleText && content) && (
-                    <Button size="small" onClick={props.submitPost}>העלה פוסט</Button>
+                    <Button size="small" onClick={submitPost}>העלה פוסט</Button>
                 )}
             </CardActions>
             </Card>
