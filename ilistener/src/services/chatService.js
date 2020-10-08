@@ -10,10 +10,17 @@ const addToPendingUsers = (user, successCallback, failCallback) => {
     }
 
     const db = app.firestore();
-    db.collection(collectionName).add(
-        user.firebaseUser.uid,
-        user.name
-    )
+    db.collection(collectionName).doc(user.firebaseUser.uid).set({
+            name: user.firebaseUser.displayName
+        })
     .then(successCallback)
     .catch(failCallback);
+};
+
+const removeFromPending = () => {
+
+};
+
+const searchChats = () => {
+
 };
